@@ -16,10 +16,10 @@ while True:
             else:
                 print("ERROR:Favor intentar nuevamente")
 
-        descripcion=input("Ingrese la descripcion del platillo \n")
+        descripcion=input("Ingrese la descripcion del platillo")
         while True:
             try:
-                precio=int(input("Ingrese el precio sin IVA del plastillo \n"))
+                precio=int(input("Ingrese el precio sin IVA del plastillo"))
                 break
             except ValueError:
                  print("ERROR:Favor ingresar un número entero para el precio del producto.")
@@ -50,12 +50,12 @@ while True:
 
 
 #Lista de Ordenes
-#Esta queda pendiente porque no sabemos quitar variables que se hayan añadido a la lista
+
 ordenes=[]
 
 while True:
     número_ordenes=input("Ingrese el número de la orden")
-    usuario=input("Favor ingresar el nombre del usuario que solicita la orden.") #en el proximo avance se hara la solicitud de pedidos donde vendra intercalado ese codigo ya automatizado de acuerdo al usuario que solicite la orden
+    usuario=input("Favor ingresar el nombre del usuario que solicita la orden.") 
     platillos=input("Ingresa el platillo ordenado")
 
     texto_de_solicitud=f"Número de la orden:{número_ordenes} / Usuario:{usuario} / Platillos:{platillos}"
@@ -69,6 +69,9 @@ while True:
     finalizar=input("Desea finalizar una orden?:{SI} {NO}")
     if finalizar.upper()=="SI":
         orden_a_finalizar=int(input("Que orden desea finalizar?"))
+        valor=ordenes[orden_a_finalizar-1]
+        ordenes.remove(valor)
+    
         
             
         
